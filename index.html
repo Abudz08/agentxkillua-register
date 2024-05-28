@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - agentxkillua</title>
+    <link rel="icon" type="image/png" href="./logo.png">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+
+
+<!-- //////////////////////////////////////////////////////////////////////
+                        REGISTRATION SECTION 
+////////////////////////////////////////////////////////////////////////-->
+<div class="container">
+    <p>
+        <strong>Notice:</strong> This sign up form is for portfolio purpose only. Once you signed up it will be saved on your local storage. You can now use the username and password in the login page.
+    </p><br>
+    <p>
+        To clear local storage, just click the clear button. It will only delete the saved username and password in this website and will not affect your other local data.
+    </p><br>
+    <button id="delete-btn">Delete</button><br>
+    <span id="delete-msg"></span>   
+</div>
+
+<section id="registration" class="container registration">
+    <h1>Sign Up</h1>
+    <p>Please fill out with required information</p>
+    <form>
+        <fieldset>
+            <div class="fullname">
+                <div class="input-group">
+                    <input type="text" id="firstname" name="firstname" placeholder="First Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="lastname" name="lastname" placeholder="Last Name" required>
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder="Email" required>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            
+            <div class="input-group">
+                <div class="password">
+                    <input type="password" id="password" name="password" placeholder="Password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+
+                    <!-- (?=.*\d):  This positive lookahead assertion ensures the password contains at least one digit (\d).
+                    (?=.*[a-z]):    This positive lookahead assertion ensures the password contains at least one lowercase letter ([a-z]).
+                    (?=.*[A-Z]):    This positive lookahead assertion ensures the password contains at least one uppercase letter ([A-Z]).
+                    .:              Matches any single character.
+                    {8,}:           This quantifier specifies that the preceding character (.) must be repeated at least 8 times. -->
+                    
+                    <i class="fas fa-eye" id="fa-eye"></i>
+                    <p id="password-message">Your password require at least 8 characters with a mix of upper and lowercase letters and numbers. </p>
+                </div>
+            </div>
+
+            <div class="birthday">
+                <label for="birthday">Birthday:</label>
+                <input type="date" id="birthday" name="birthday" required>  
+            </div>
+
+            <div class="age">
+                Input your age years:
+                <input type="number" name="age" id="age" min="13" max="120" required>
+            </div>
+
+            <div class="sex">
+                <label for="sex">Sex:</label>
+                <div class="radio-group">
+                    <input type="radio" name="sex" id="male">Male
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="sex" id="female">Female
+                </div>
+                <div class="radio-group">
+                    <input type="radio" name="sex" id="other">Other
+                </div>
+                <!-- having the same name for the radio button will make the user to select only one -->
+            </div>
+
+            <div class="profilepic">
+                <div>
+                    <span>Upload a profile picture</span>
+                    <input type="file" name="picture" id="picture">
+                </div>
+                <img class="image-preview" id="preview" alt="Image Preview">
+            </div>
+
+            
+
+            <div class="referrer">
+                <span>How did you hear about us?</span>
+                <select name="referrer" name="referrer" id="referrer" required>      
+                    <option value="">(select one)</option>
+                    <option value="1">Facebook</option>
+                    <option value="2">Youtube</option>
+                    <option value="3">Tiktok</option>
+                    <option value="4">Others</option>
+                </select>
+            </div>
+
+            <div class="introduction">
+                <span>Tell us about yourself:</span>
+                <textarea name="message" id="messsage" rows="3" cols="30" placeholder="Your message here"></textarea>
+            </div>
+
+            <div class="terms">
+                <input type="checkbox" required> I accept <a href="#">terms and conditions</a>
+            </div>
+
+        </fieldset>
+
+        <button type="submit" id="signup-btn">SIGN UP</button><br>
+        <!-- type submit at the end before the closing tag form to ensure that all information with required attribute are filed -->
+        <span id="signup-msg"></span>
+    </form>
+</section>
+
+<div class="container">
+    <span>Already have an acount?</span>
+    <a href="https://abudz08.github.io/agentxkillua-login/" id="login">Login</a>
+</div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
